@@ -1,0 +1,928 @@
+<sdf version='1.4'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+            </friction>
+            <bounce/>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <gravity>0 0 -9.8</gravity>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='roverfinal'>
+      <link name='rov'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>4.39169</mass>
+          <inertia>
+            <ixx>0.199357</ixx>
+            <ixy>-3.6151e-05</ixy>
+            <ixz>0.00940668</ixz>
+            <iyy>0.208149</iyy>
+            <iyz>-1.43928e-07</iyz>
+            <izz>0.306773</izz>
+          </inertia>
+        </inertial>
+        <collision name='rov_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rov.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='rov_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rov.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='rueda1'>
+        <pose>0.39573 -0.30621 0.12581 1.5708 -0 0</pose>
+        <inertial>
+          <pose>7.60404e-06 6.62674e-06 0.00062166 0 -0 0</pose>
+          <mass>3.68718</mass>
+          <inertia>
+            <ixx>0.0186305</ixx>
+            <ixy>-9.47267e-08</ixy>
+            <ixz>9.82909e-06</ixz>
+            <iyy>0.0186303</iyy>
+            <iyz>8.11534e-06</iyz>
+            <izz>0.0288597</izz>
+          </inertia>
+        </inertial>
+        <collision name='rueda1_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda1.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='rueda1_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda1.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='rueda_1' type='revolute'>
+        <child>rueda1</child>
+        <parent>rov</parent>
+        <axis>
+          <xyz>0 -1 -4e-06</xyz>
+          <limit>
+            <lower>-15</lower>
+            <upper>15</upper>
+            <effort>1000</effort>
+            <velocity>0.5</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='rueda2'>
+        <pose>0.39573 0.30621 0.12581 1.5708 -0 0</pose>
+        <inertial>
+          <pose>2.1295e-06 -9.7362e-06 -0.00062151 0 -0 0</pose>
+          <mass>3.6872</mass>
+          <inertia>
+            <ixx>0.018631</ixx>
+            <ixy>-8.0891e-08</ixy>
+            <ixz>-2.7061e-06</ixz>
+            <iyy>0.01863</iyy>
+            <iyz>1.2466e-05</iyz>
+            <izz>0.02886</izz>
+          </inertia>
+        </inertial>
+        <collision name='rueda2_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda2.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='rueda2_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda2.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='rueda_2' type='revolute'>
+        <child>rueda2</child>
+        <parent>rov</parent>
+        <axis>
+          <xyz>0 -1 -4e-06</xyz>
+          <limit>
+            <lower>-15</lower>
+            <upper>15</upper>
+            <effort>1000</effort>
+            <velocity>0.5</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='rueda3'>
+        <pose>0.090614 -0.30621 0.12581 1.5708 -0 0</pose>
+        <inertial>
+          <pose>9.2261e-06 1.3068e-06 0.00062028 0 -0 0</pose>
+          <mass>3.6873</mass>
+          <inertia>
+            <ixx>0.018631</ixx>
+            <ixy>-1.3252e-07</ixy>
+            <ixz>1.1952e-05</ixz>
+            <iyy>0.018631</iyy>
+            <iyz>4.1426e-06</iyz>
+            <izz>0.02886</izz>
+          </inertia>
+        </inertial>
+        <collision name='rueda3_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda3.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='rueda3_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda3.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='rueda_3' type='revolute'>
+        <child>rueda3</child>
+        <parent>rov</parent>
+        <axis>
+          <xyz>0 -1 -4e-06</xyz>
+          <limit>
+            <lower>-15</lower>
+            <upper>15</upper>
+            <effort>1000</effort>
+            <velocity>0.5</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='rueda4'>
+        <pose>0.090612 0.30621 0.12581 1.5708 -0 0</pose>
+        <inertial>
+          <pose>3.8713e-06 -9.0806e-06 -0.00062179 0 -0 0</pose>
+          <mass>3.6872</mass>
+          <inertia>
+            <ixx>0.018631</ixx>
+            <ixy>1.4389e-08</ixy>
+            <ixz>-5.2116e-06</ixz>
+            <iyy>0.01863</iyy>
+            <iyz>1.1701e-05</iyz>
+            <izz>0.02886</izz>
+          </inertia>
+        </inertial>
+        <collision name='rueda4_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda4.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='rueda4_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda4.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='rueda_4' type='revolute'>
+        <child>rueda4</child>
+        <parent>rov</parent>
+        <axis>
+          <xyz>0 -1 -4e-06</xyz>
+          <limit>
+            <lower>-15</lower>
+            <upper>15</upper>
+            <effort>1000</effort>
+            <velocity>0.5</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='rueda5'>
+        <pose>-0.39373 -0.30621 0.12581 1.5708 -0 0</pose>
+        <inertial>
+          <pose>2.2834e-06 -9.3615e-06 0.00061913 0 -0 0</pose>
+          <mass>3.6872</mass>
+          <inertia>
+            <ixx>0.018631</ixx>
+            <ixy>1.4376e-07</ixy>
+            <ixz>2.2094e-06</ixz>
+            <iyy>0.018631</iyy>
+            <iyz>-1.2381e-05</iyz>
+            <izz>0.02886</izz>
+          </inertia>
+        </inertial>
+        <collision name='rueda5_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda5.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='rueda5_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda5.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='rueda_5' type='revolute'>
+        <child>rueda5</child>
+        <parent>rov</parent>
+        <axis>
+          <xyz>0 -1 -4e-06</xyz>
+          <limit>
+            <lower>-15</lower>
+            <upper>15</upper>
+            <effort>1000</effort>
+            <velocity>0.5</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <link name='rueda6'>
+        <pose>-0.39373 0.30621 0.12581 1.5708 -0 0</pose>
+        <inertial>
+          <pose>-9.8771e-06 -1.2449e-06 -0.00062163 0 -0 0</pose>
+          <mass>3.6872</mass>
+          <inertia>
+            <ixx>0.01863</ixx>
+            <ixy>1.0031e-07</ixy>
+            <ixz>1.2633e-05</ixz>
+            <iyy>0.018631</iyy>
+            <iyz>1.7985e-06</iyz>
+            <izz>0.02886</izz>
+          </inertia>
+        </inertial>
+        <collision name='rueda6_collision'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda6.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='rueda6_visual'>
+          <pose>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/daniela/proyrover_ws/src/roverfinal/meshes/rueda6.STL</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='rueda_6' type='revolute'>
+        <child>rueda6</child>
+        <parent>rov</parent>
+        <axis>
+          <xyz>0 -1 -4e-06</xyz>
+          <limit>
+            <lower>-15</lower>
+            <upper>15</upper>
+            <effort>1000</effort>
+            <velocity>0.5</velocity>
+          </limit>
+          <dynamics/>
+        </axis>
+      </joint>
+      <pose>0 0 0 0 -0 0</pose>
+      <static>0</static>
+    </model>
+    <model name='plano2'>
+      <link name='Wall_0'>
+        <collision name='Wall_0_Collision'>
+          <geometry>
+            <box>
+              <size>12.7858 0.2 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_0_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>12.7858 0.2 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>5.56288 -2.84 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_2'>
+        <collision name='Wall_2_Collision'>
+          <geometry>
+            <box>
+              <size>5.4572 0.2 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_2_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>5.4572 0.2 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>-0.705705 -0.203442 0 0 -0 1.5708</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_3'>
+        <collision name='Wall_3_Collision'>
+          <geometry>
+            <box>
+              <size>10.0631 0.2 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_3_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>10.0631 0.2 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>4.22583 2.42516 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_4'>
+        <collision name='Wall_4_Collision'>
+          <geometry>
+            <box>
+              <size>5.6433 0.2 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_4_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>5.6433 0.2 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>9.15737 -0.29649 0 0 0 -1.5708</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_5'>
+        <collision name='Wall_5_Collision'>
+          <geometry>
+            <box>
+              <size>2.99144 0.2 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_5_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2.99144 0.2 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>10.5531 -3.01814 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_6'>
+        <collision name='Wall_6_Collision'>
+          <geometry>
+            <box>
+              <size>0.21 0.2 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_6_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.21 0.2 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>11.9538 -3.01814 0 0 -0 0</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <link name='Wall_7'>
+        <collision name='Wall_7_Collision'>
+          <geometry>
+            <box>
+              <size>2.94491 0.2 2.5</size>
+            </box>
+          </geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <bounce/>
+            <friction>
+              <ode/>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+          </surface>
+        </collision>
+        <visual name='Wall_7_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2.94491 0.2 2.5</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <pose>11.9588 -1.64568 0 0 -0 1.5708</pose>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <static>1</static>
+    </model>
+    <state world_name='default'>
+      <sim_time>74 7000000</sim_time>
+      <real_time>304 303931341</real_time>
+      <wall_time>1511150981 865061973</wall_time>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='plano2'>
+        <pose>0 0 0 0 -0 0</pose>
+        <link name='Wall_0'>
+          <pose>5.56288 -2.84 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_2'>
+          <pose>-0.705705 -0.203442 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_3'>
+          <pose>4.22583 2.42516 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_4'>
+          <pose>9.15737 -0.29649 0 0 0 -1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_5'>
+          <pose>10.5531 -3.01814 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_6'>
+          <pose>11.9538 -3.01814 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_7'>
+          <pose>11.9588 -1.64568 0 0 -0 1.5708</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='roverfinal'>
+        <pose>0.002859 0.003289 -0.005917 -1.4e-05 -5.4e-05 -0.054152</pose>
+        <link name='rov'>
+          <pose>0.002859 0.003289 -0.005917 -1.4e-05 -5.4e-05 -0.054152</pose>
+          <velocity>0.000139 0.000154 -0.006414 0.008025 -0.002781 -0.000718</velocity>
+          <acceleration>0.000874 -0.035063 -9.78229 -0.004836 0.003558 -0.005619</acceleration>
+          <wrench>0.003837 -0.153987 -42.9608 0 -0 0</wrench>
+        </link>
+        <link name='rueda1'>
+          <pose>0.381428 -0.323889 0.119919 1.57079 -0.055244 -0.054152</pose>
+          <velocity>-0.000408 -0.001176 -0.007999 0.006723 2.8e-05 -0.000653</velocity>
+          <acceleration>0.011546 -0.033356 -9.78991 0.001312 -7.1e-05 -0.000699</acceleration>
+          <wrench>0.042572 -0.12299 -36.0972 0 -0 0</wrench>
+        </link>
+        <link name='rueda2'>
+          <pose>0.414576 0.287633 0.11991 1.57078 0.210816 -0.054155</pose>
+          <velocity>-3.5e-05 -0.001023 -0.002964 0.009067 -0.000147 -0.000652</velocity>
+          <acceleration>-0.021554 -0.014382 -9.87023 0.003323 -0.00018 -0.00028</acceleration>
+          <wrench>-0.079472 -0.053029 -36.3935 0 -0 0</wrench>
+        </link>
+        <link name='rueda3'>
+          <pose>0.076759 -0.307375 0.119903 1.57079 -0.044801 -0.054152</pose>
+          <velocity>-0.000363 -0.000831 -0.008685 0.007722 -0.005252 -0.000592</velocity>
+          <acceleration>-0.0072 -0.041246 -9.78599 0.000741 -4e-05 0.000266</acceleration>
+          <wrench>-0.026547 -0.152087 -36.0839 0 -0 0</wrench>
+        </link>
+        <link name='rueda4'>
+          <pose>0.109905 0.304147 0.119895 1.57077 0.101151 -0.054156</pose>
+          <velocity>3.7e-05 -0.000702 -0.003897 0.011916 0.000101 -0.000481</velocity>
+          <acceleration>-0.00385 0.187156 -9.7259 0.022217 -0.001206 0.001962</acceleration>
+          <wrench>-0.014196 0.690082 -35.8614 0 -0 0</wrench>
+        </link>
+        <link name='rueda5'>
+          <pose>-0.406874 -0.281158 0.119876 1.5708 -0.067003 -0.054153</pose>
+          <velocity>-0.000468 -0.000748 -0.009771 0.004664 -0.003604 -0.000504</velocity>
+          <acceleration>-0.029536 -0.072004 -9.81716 -0.004676 0.000252 0.000354</acceleration>
+          <wrench>-0.108905 -0.265493 -36.1978 0 -0 0</wrench>
+        </link>
+        <link name='rueda6'>
+          <pose>-0.373727 0.330364 0.119868 1.57079 -0.07345 -0.054152</pose>
+          <velocity>1.7e-05 -0.000648 -0.004809 0.008486 0.002929 -0.000577</velocity>
+          <acceleration>0.049553 0.015596 -9.83191 -0.001009 5.4e-05 -0.000934</acceleration>
+          <wrench>0.182711 0.057505 -36.2522 0 -0 0</wrench>
+        </link>
+      </model>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>12.3188 -6.29194 47.1386 -2.13398e-16 1.30764 2.23619</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+  </world>
+</sdf>

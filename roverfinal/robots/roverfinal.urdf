@@ -1,0 +1,391 @@
+<robot
+  name="roverfinal">
+  <link
+    name="rov">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.39169267022831" />
+      <inertia
+        ixx="0.199357385800559"
+        ixy="-3.61509941138825E-05"
+        ixz="0.00940668484747101"
+        iyy="0.208149492549454"
+        iyz="-1.43928486263471E-07"
+        izz="0.306772643862929" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rov.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.843137254901961 0.815686274509804 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rov.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rueda1">
+    <inertial>
+      <origin
+        xyz="7.60403832356094E-06 6.6267419967965E-06 0.000621660262235091"
+        rpy="0 0 0" />
+      <mass
+        value="3.68717840133968" />
+      <inertia
+        ixx="0.0186305070816369"
+        ixy="-9.47267250335423E-08"
+        ixz="9.82909026594848E-06"
+        iyy="0.0186303359627206"
+        iyz="8.11533994536173E-06"
+        izz="0.0288597043890941" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_1"
+    type="revolute">
+    <origin
+      xyz="0.39573 -0.30621 0.12581"
+      rpy="1.5708 0 0" />
+    <parent
+      link="rov" />
+    <child
+      link="rueda1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-15"
+      upper="15"
+      effort="1000"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="rueda2">
+    <inertial>
+      <origin
+        xyz="2.1295E-06 -9.7362E-06 -0.00062151"
+        rpy="0 0 0" />
+      <mass
+        value="3.6872" />
+      <inertia
+        ixx="0.018631"
+        ixy="-8.0891E-08"
+        ixz="-2.7061E-06"
+        iyy="0.01863"
+        iyz="1.2466E-05"
+        izz="0.02886" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_2"
+    type="revolute">
+    <origin
+      xyz="0.39573 0.30621 0.12581"
+      rpy="1.5708 0 0" />
+    <parent
+      link="rov" />
+    <child
+      link="rueda2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-15"
+      upper="15"
+      effort="1000"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="rueda3">
+    <inertial>
+      <origin
+        xyz="9.2261E-06 1.3068E-06 0.00062028"
+        rpy="0 0 0" />
+      <mass
+        value="3.6873" />
+      <inertia
+        ixx="0.018631"
+        ixy="-1.3252E-07"
+        ixz="1.1952E-05"
+        iyy="0.018631"
+        iyz="4.1426E-06"
+        izz="0.02886" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_3"
+    type="revolute">
+    <origin
+      xyz="0.090614 -0.30621 0.12581"
+      rpy="1.5708 0 0" />
+    <parent
+      link="rov" />
+    <child
+      link="rueda3" />
+   <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-15"
+      upper="15"
+      effort="1000"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="rueda4">
+    <inertial>
+      <origin
+        xyz="3.8713E-06 -9.0806E-06 -0.00062179"
+        rpy="0 0 0" />
+      <mass
+        value="3.6872" />
+      <inertia
+        ixx="0.018631"
+        ixy="1.4389E-08"
+        ixz="-5.2116E-06"
+        iyy="0.01863"
+        iyz="1.1701E-05"
+        izz="0.02886" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_4"
+    type="revolute">
+    <origin
+      xyz="0.090612 0.30621 0.12581"
+      rpy="1.5708 0 0" />
+    <parent
+      link="rov" />
+    <child
+      link="rueda4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-15"
+      upper="15"
+      effort="1000"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="rueda5">
+    <inertial>
+      <origin
+        xyz="2.2834E-06 -9.3615E-06 0.00061913"
+        rpy="0 0 0" />
+      <mass
+        value="3.6872" />
+      <inertia
+        ixx="0.018631"
+        ixy="1.4376E-07"
+        ixz="2.2094E-06"
+        iyy="0.018631"
+        iyz="-1.2381E-05"
+        izz="0.02886" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_5"
+    type="revolute">
+    <origin
+      xyz="-0.39373 -0.30621 0.12581"
+      rpy="1.5708 0 0" />
+    <parent
+      link="rov" />
+    <child
+      link="rueda5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-15"
+      upper="15"
+      effort="1000"
+      velocity="0.5" />
+  </joint>
+  <link
+    name="rueda6">
+    <inertial>
+      <origin
+        xyz="-9.8771E-06 -1.2449E-06 -0.00062163"
+        rpy="0 0 0" />
+      <mass
+        value="3.6872" />
+      <inertia
+        ixx="0.01863"
+        ixy="1.0031E-07"
+        ixz="1.2633E-05"
+        iyy="0.018631"
+        iyz="1.7985E-06"
+        izz="0.02886" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://roverfinal/meshes/rueda6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rueda_6"
+    type="revolute">
+    <origin
+      xyz="-0.39373 0.30621 0.12581"
+      rpy="1.5708 0 0" />
+    <parent
+      link="rov" />
+    <child
+      link="rueda6" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-15"
+      upper="15"
+      effort="1000"
+      velocity="0.5" />
+  </joint>
+</robot>
